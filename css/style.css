@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Fondo con logo en hero */
+    #inicio {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('images/logo/campus-logo.png') no-repeat center center;
+      background-size: contain;
+      background-color: #444;
+      background-blend-mode: darken;
+      color: white;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    .btn-primary {
+      padding: 0.6rem 1.5rem;
+      font-weight: bold;
+      border-radius: 30px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo/campus-logo.png" alt="Campus Connect" height="40" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li class="nav-item"><a href="#impacto" class="nav-link">Impacto</a></li>
+          <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Inicio -->
+  <section id="inicio">
+    <div class="hero-content container">
+      <h1>Campus Connect</h1>
+      <p>Centro de información y participación para la comunidad educativa.</p>
+      <a href="#servicios" class="btn btn-primary">Empieza Ahora</a>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-5 text-center">
+    <div class="container">
+      <h2>¿Qué es Campus Connect?</h2>
+      <p>Plataforma digital para centralizar información, fomentar iniciativas y conectar a todos los actores educativos.</p>
+    </div>
+  </section>
+
+  <!-- Impacto -->
+  <section id="impacto" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2>Impacto de Campus Connect</h2>
+      <div class="row">
+        <div class="col-md-4"><h3>250+</h3><p>Proyectos</p></div>
+        <div class="col-md-4"><h3>1.200</h3><p>Usuarios activos</p></div>
+        <div class="col-md-4"><h3>35</h3><p>Eventos realizados</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <footer id="contacto" class="py-5 bg-dark text-white text-center">
+    <div class="container">
+      <h4>Contáctanos</h4>
+      <ul class="list-unstyled">
+        <li>campusconnect@email.com</li>
+        <li>+57 301 123 4567</li>
+        <li>Facultad de Ingeniería, campusconnect</li>
+      </ul>
+      <p class="mt-3">&copy; 2025 Campus Connect</p>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

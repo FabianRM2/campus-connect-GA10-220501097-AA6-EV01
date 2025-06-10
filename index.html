@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #inicio {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('images/logo/dcndc.png') no-repeat center center;
+      background-size: 60%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #1e1e1e;
+      background-blend-mode: multiply;
+      color: white;
+    }
+
+    .hero-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hidden-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navegación -->
+<header class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo/dcndc.png" alt="Campus Connect" height="40" />
+      Campus Connect
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#" class="nav-link" onclick="mostrarLogin()">Inicio</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" onclick="mostrarServicios()">Servicios</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" onclick="mostrarImpacto()">Impacto</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" onclick="mostrarContacto()">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="inicio">
+  <div class="hero-content container">
+    <h1 class="display-4 fw-bold">Campus Connect</h1>
+    <p class="lead">Centro de información y participación para la comunidad educativa.</p>
+    <a href="#" class="btn btn-primary mt-3" onclick="mostrarLogin()">Empieza Ahora</a>
+  </div>
+</section>
+
+<!-- Login -->
+<section id="login" class="py-5 hidden-section">
+  <div class="container text-center">
+    <h2>Ingreso Estudiantes</h2>
+    <form class="mx-auto" style="max-width: 400px" onsubmit="validarLogin(event)">
+      <div class="mb-3 text-start">
+        <label>Correo institucional</label>
+        <input type="email" class="form-control" id="correo" required placeholder="usuario@correo.campusconnect.com">
+      </div>
+      <div class="mb-3 text-start">
+        <label>Contraseña</label>
+        <input type="password" class="form-control" id="clave" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Ingresar</button>
+      <button type="button" class="btn btn-link w-100 text-primary" onclick="mostrarRecuperar()">¿Olvidaste tu contraseña?</button>
+      <button type="button" class="btn btn-secondary w-100 mt-2" onclick="volverInicio()">Regresar al inicio</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- Servicios -->
+<section id="servicios" class="py-5 hidden-section">
+  <div class="container">
+    <h2 class="text-center mb-4">Servicios Disponibles</h2>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <img src="images/servicios/gestion-cursos/cursos.png" class="img-fluid mb-2" alt="Gestión de cursos">
+        <p>📚 Gestión de cursos</p>
+      </div>
+      <div class="col-md-3">
+        <img src="images/servicios/inscripcion-eventos/eventos.png" class="img-fluid mb-2" alt="Eventos">
+        <p>🎓 Inscripción a eventos</p>
+      </div>
+      <div class="col-md-3">
+        <img src="images/servicios/reservas-de-salas/reservas.png" class="img-fluid mb-2" alt="Reservas">
+        <p>📅 Reservas de salas</p>
+      </div>
+      <div class="col-md-3">
+        <img src="images/servicios/apoyo-academico/apoyo.png" class="img-fluid mb-2" alt="Apoyo académico">
+        <p>📖 Apoyo académico</p>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="btn btn-secondary" onclick="volverInicio()">Regresar al inicio</button>
+    </div>
+  </div>
+</section>
+
+<!-- Impacto -->
+<section id="impacto" class="py-5 bg-light hidden-section">
+  <div class="container">
+    <h2 class="text-center mb-4">Historias de Impacto</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3">
+        <img src="images/impacto/impacto-ilustracion.png" class="img-fluid rounded shadow" alt="Impacto">
+      </div>
+      <div class="col-md-6">
+        <h4>Resultados alcanzados</h4>
+        <ul class="list-unstyled">
+          <li>🎓 Más de <strong>2000 estudiantes</strong> mejoraron su rendimiento.</li>
+          <li>⚡ Reducción del <strong>80% en trámites presenciales</strong>.</li>
+          <li>📈 Más de <strong>100 eventos</strong> organizados con éxito.</li>
+          <li>🌐 Mayor integración entre estudiantes, docentes y administrativos.</li>
+        </ul>
+        <button class="btn btn-secondary mt-3" onclick="volverInicio()">Regresar al inicio</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="py-5 bg-dark text-white hidden-section">
+  <div class="container text-center">
+    <h2 class="mb-4">Canales de Atención</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3">
+        <img src="images/contacto/contacto-canales.png" class="img-fluid" alt="Atención usuario" />
+      </div>
+      <div class="col-md-6 text-start">
+        <ul class="list-unstyled fs-5">
+          <li>📧 Email: campusconnect@email.com</li>
+          <li>☎️ Teléfono: +57 301 123 4567</li>
+          <li>💬 WhatsApp: +57 321 456 7890</li>
+          <li>🏫 Oficina: Facultad de Ingeniería, Campus</li>
+        </ul>
+        <button class="btn btn-light mt-3" onclick="volverInicio()">Regresar al inicio</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dashboard -->
+<section id="dashboard" class="py-5 hidden-section text-center">
+  <div class="container">
+    <h2>Bienvenido a tu panel Campus Connect</h2>
+    <div class="row mt-4">
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>📘 Currículo</h5></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>📜 Historial</h5></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>📁 Contenidos</h5></div></div>
+      <div class="col-md-3"><div class="card p-3 shadow-sm"><h5>📝 Calificaciones</h5></div></div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-3 offset-md-4"><div class="card p-3 shadow-sm"><h5>📅 Matrículas</h5></div></div>
+    </div>
+    <button class="btn btn-secondary mt-4" onclick="volverInicio()">Cerrar sesión</button>
+  </div>
+</section>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  const secciones = ['inicio', 'login', 'servicios', 'impacto', 'contacto', 'dashboard'];
+  let intentos = 0;
+  let bloqueado = false;
+
+  function ocultarTodo() {
+    secciones.forEach(id => document.getElementById(id)?.classList.add('hidden-section'));
+  }
+
+  function mostrarLogin() {
+    ocultarTodo();
+    document.getElementById('login').classList.remove('hidden-section');
+  }
+
+  function mostrarServicios() {
+    ocultarTodo();
+    document.getElementById('servicios').classList.remove('hidden-section');
+  }
+
+  function mostrarImpacto() {
+    ocultarTodo();
+    document.getElementById('impacto').classList.remove('hidden-section');
+  }
+
+  function mostrarContacto() {
+    ocultarTodo();
+    document.getElementById('contacto').classList.remove('hidden-section');
+  }
+
+  function volverInicio() {
+    ocultarTodo();
+    document.getElementById('inicio').classList.remove('hidden-section');
+  }
+
+  function validarLogin(event) {
+    event.preventDefault();
+    if (bloqueado) {
+      alert("El acceso está bloqueado. Intenta nuevamente en 1 hora.");
+      return;
+    }
+
+    const correo = document.getElementById("correo").value.trim();
+    const clave = document.getElementById("clave").value.trim();
+
+    if (correo === "fabianreinosa@correo.campusconnect.com" && clave === "123456789") {
+      ocultarTodo();
+      document.getElementById("dashboard").classList.remove("hidden-section");
+    } else {
+      intentos++;
+      if (intentos >= 3) {
+        bloqueado = true;
+        alert("Has excedido el número de intentos. La cuenta se bloqueará por 1 hora.");
+        setTimeout(() => {
+          bloqueado = false;
+          intentos = 0;
+        }, 3600000);
+      } else {
+        alert(`Usuario o contraseña inválida. Intento ${intentos}/3`);
+      }
+    }
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
